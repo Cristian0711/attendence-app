@@ -1,0 +1,48 @@
+@keyframes pulseRomb {
+    0% {
+      transform: scale(1) rotate(45deg); /* Inițial rombul are dimensiunea 1x */
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5) rotate(45deg); /* Rombul se mărește de 1.5x */
+      opacity: 0.6; /* Devine mai transparent */
+    }
+    100% {
+      transform: scale(1) rotate(45deg); /* Rombul revine la dimensiunea inițială */
+      opacity: 1;
+    }
+}
+  
+.animate-pulse-romb {
+    animation: pulseRomb 1.5s infinite; /* Animatie care durează 1.5 secunde și se repeta continuu */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Add if you want staggered animations for cards */
+.grid > div:nth-child(n) {
+  animation-delay: calc(n * 0.05s);
+}
+
+.events-container {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .events-container.opacity-0 {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  
